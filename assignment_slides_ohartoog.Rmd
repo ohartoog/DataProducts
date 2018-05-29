@@ -1,0 +1,25 @@
+---
+title: "Assignment Week 3"
+author: "Olga Hartoog"
+date: "29 mei 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Slide with Interactive 3D Plot
+
+```{r echo=FALSE, message=FALSE, warning= FALSE}
+
+library(plotly)
+set.seed(2016-07-21)
+temp <- rnorm(100, mean = 30, sd = 5)
+particlesize <- runif(100,200,400)
+pressure <- rnorm(100)
+time <- 1:100
+plot_ly(x = ~temp, y = ~pressure, z = ~time,
+        type = "scatter3d", color = ~temp, size = ~particlesize)
+```
+
